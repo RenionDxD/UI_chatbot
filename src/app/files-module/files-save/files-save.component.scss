@@ -1,0 +1,78 @@
+
+.card-container {
+    background: linear-gradient(to bottom, #202020, #777777);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.centered-cards {
+    display: flex;
+    gap: 35px;
+}
+
+.centered-cards button {
+    margin: 0;
+}
+
+
+.card-container button {
+    margin: 0 17.5px; /* Añade un margen entre los botones */
+}
+
+/* Estilo adicional para las tarjetas */
+.card {
+    width: 25rem; 
+    height: 30rem;
+    text-align: center;
+    display: inline-block;
+}
+
+.svg-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px; /* Establecer una altura para el contenedor del SVG */
+}
+
+
+
+
+.sss{
+  background:#313131;
+  color:#fff;
+  border:none;
+  position:relative;
+  height:60px;
+  font-size:1.6em;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+}
+.sss:hover{
+  background:#ffffff00;
+  color: rgb(0, 75, 75);
+}
+.sss:before,.sss:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: rgb(0, 133, 133);
+  transition:400ms ease all;
+}
+.sss:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.sss:hover:before,.sss:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+

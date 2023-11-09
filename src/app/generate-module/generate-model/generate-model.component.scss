@@ -1,0 +1,42 @@
+
+.all-container{
+    padding: 50px;
+    
+}
+
+.card-container {
+    background: linear-gradient(to bottom, #202020, #777777);
+    align-items: center;
+    height: 100vh;
+    gap: 35px;
+    
+}
+
+.centered-cards {
+    display: flex;
+    gap: 35px;
+}
+
+
+
+
+  .progress-bar {
+    width: 100%;
+    height: 20px;
+    background: #ddd;
+  }
+  
+  .progress {
+    height: 100%;
+    width: 0%;
+    background: rgb(0, 133, 133);
+    transition: width 0.3s ease;
+  }
+  
+   
+
+
+
+
+
+   

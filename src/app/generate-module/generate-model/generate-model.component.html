@@ -1,0 +1,93 @@
+<div class="card-container">
+    <div class="all-container">
+        <div class="centered-cards">
+
+            <div class="card mb-3" style="height: 535px; overflow-y: auto; padding: 40px; align-items: center;">
+
+
+                <div class="card-group" style="display: flex; gap: 35px;">
+
+                    <div class="card mb-3" style="align-items: center; ">
+                        <div style="align-items: center;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16" style="color: rgb(0, 133, 133);">
+                                <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
+                                <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-robot" viewBox="0 0 16 16" style="color: rgb(0, 133, 133);">
+                                <path d="M6 12.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5ZM3 8.062C3 6.76 4.235 5.765 5.53 5.886a26.58 26.58 0 0 0 4.94 0C11.765 5.765 13 6.76 13 8.062v1.157a.933.933 0 0 1-.765.935c-.845.147-2.34.346-4.235.346-1.895 0-3.39-.2-4.235-.346A.933.933 0 0 1 3 9.219V8.062Zm4.542-.827a.25.25 0 0 0-.217.068l-.92.9a24.767 24.767 0 0 1-1.871-.183.25.25 0 0 0-.068.495c.55.076 1.232.149 2.02.193a.25.25 0 0 0 .189-.071l.754-.736.847 1.71a.25.25 0 0 0 .404.062l.932-.97a25.286 25.286 0 0 0 1.922-.188.25.25 0 0 0-.068-.495c-.538.074-1.207.145-1.98.189a.25.25 0 0 0-.166.076l-.754.785-.842-1.7a.25.25 0 0 0-.182-.135Z"/>
+                                <path d="M8.5 1.866a1 1 0 1 0-1 0V3h-2A4.5 4.5 0 0 0 1 7.5V8a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1v1a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-1a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1v-.5A4.5 4.5 0 0 0 10.5 3h-2V1.866ZM14 7.5V13a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7.5A3.5 3.5 0 0 1 5.5 4h5A3.5 3.5 0 0 1 14 7.5Z"/>
+                            </svg>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Una vez verificados tanto el archivo de texto con los 'prompts' como el archivo XLSX con los datos, puedes comenzar el proceso de modelado o actualizar el chat con la nueva información proporcionada.</p>
+                            <div class="d-flex justify-content-center mt-4">
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="background-color: rgb(0, 95, 95);">
+                                    Crear o actualizar modelo
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
+
+
+
+                    
+
+                    <div style="margin-left: 100px; width: 750px;">
+                        <div style="margin-bottom: 20px;">
+                            <div class="progress-bar">
+                                <div class="progress" [style.width.%]="progress"></div>
+                            </div>
+                        </div>
+
+                        <div style="display: flex;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-info-lg" viewBox="0 0 16 16">
+                                <path d="m9.708 6.075-3.024.379-.108.502.595.108c.387.093.464.232.38.619l-.975 4.577c-.255 1.183.14 1.74 1.067 1.74.72 0 1.554-.332 1.933-.789l.116-.549c-.263.232-.65.325-.905.325-.363 0-.494-.255-.402-.704l1.323-6.208Zm.091-2.755a1.32 1.32 0 1 1-2.64 0 1.32 1.32 0 0 1 2.64 0Z"/>
+                            </svg>
+                            <p>
+                                INFORME DE RESULTADOS DE ENTRENAMIENTO:
+                            </p>
+                        </div>
+
+                        <div class="card-body">
+                            <div *ngFor="let item of response; let i = index">
+                                <pre>>>>: {{ item | json }}</pre>
+                                <hr>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel" style="color: rgb(172, 26, 0);">!ATENCION</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <h4>¿Seguro que quieres actualizar?</h4>
+            <hr>
+            <p>Tras actualizar el modelo, su funcionamiento puede verse afectado por la calidad de los datos que se ingresen.</p>
+            <p>Asegurese que los datos son correctos</p>
+          </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="generarModelo()" style="background-color: rgb(0, 133, 133);;">Actualizar</button>
+        </div>
+      </div>
+    </div>
+  </div>
