@@ -7,7 +7,11 @@
 
                 <div class="card-group" style="display: flex; gap: 35px;">
 
+
+
+                    
                     <div class="card mb-3" style="align-items: center; ">
+
                         <div style="align-items: center;">
                             <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16" style="color: rgb(0, 133, 133);">
                                 <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
@@ -18,6 +22,7 @@
                                 <path d="M8.5 1.866a1 1 0 1 0-1 0V3h-2A4.5 4.5 0 0 0 1 7.5V8a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1v1a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-1a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1v-.5A4.5 4.5 0 0 0 10.5 3h-2V1.866ZM14 7.5V13a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7.5A3.5 3.5 0 0 1 5.5 4h5A3.5 3.5 0 0 1 14 7.5Z"/>
                             </svg>
                         </div>
+
                         <div class="card-body">
                             <p class="card-text">Una vez verificados tanto el archivo de texto con los 'prompts' como el archivo XLSX con los datos, puedes comenzar el proceso de modelado o actualizar el chat con la nueva información proporcionada.</p>
                             <div class="d-flex justify-content-center mt-4">
@@ -26,15 +31,26 @@
                                 </button>
                             </div>
                         </div>
+
+                        <div class="card" style="margin-bottom: 10px;">
+                            <div class="card-body" style="display: flex;">
+                                <p style="margin-right: 10px;">Usar datos recientes</p>
+                                <label class="switch">
+                                    <input type="checkbox" [disabled]="isSwitchDisabled" (change)="onToggle($event)">
+                                    <div class="slider round"></div>
+                                </label>
+                            </div>
+                        </div>
+
+                        
                     </div>
-
                     
 
 
 
-
                     
-
+                    
+                      
                     <div style="margin-left: 100px; width: 750px;">
                         <div style="margin-bottom: 20px;">
                             <div class="progress-bar">
@@ -90,4 +106,4 @@
         </div>
       </div>
     </div>
-  </div>
+</div>

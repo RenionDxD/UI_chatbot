@@ -1,11 +1,13 @@
 .all-container{
     padding: 35px;
+
 }
 .card-container {
     background: linear-gradient(to bottom, #202020, #777777);
     align-items: center;
     height: 100vh;
     gap: 35px;
+
 }
 
 
@@ -14,7 +16,7 @@
 .mensaje {
     margin: 15px;
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 25px;
     font-family: 'Arial', sans-serif;
     font-size: 16px;
     margin-bottom: 10px;
@@ -29,6 +31,7 @@
   }
   
   .recibido {
+    border-radius: 25px;
     align-self: flex-end;
     position: relative;
     background-color: rgb(236, 236, 236); /* Amarillo suave */
@@ -123,3 +126,14 @@
   }
   
   
+
+  /* styles.css */
+
+.opaque-circle {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%; /* Hace que el div sea un círculo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
