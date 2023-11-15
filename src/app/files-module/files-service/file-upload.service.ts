@@ -12,10 +12,11 @@ export class FileUploadService {
 
   constructor(private http: HttpClient) { }
 
-  uploadFiles(archivo: File, txt: File): Observable<any> {
+  uploadFiles(archivo: File, txt: File, key: File): Observable<any> {
     const formData = new FormData();
     formData.append('archivo', archivo);
     formData.append('txt', txt);
+    formData.append('key', key);
 
     return this.http.post(this.apiUrl, formData);
   }

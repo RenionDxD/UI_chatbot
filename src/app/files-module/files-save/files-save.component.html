@@ -2,47 +2,72 @@
     <div class="all-container">
         <div class="centered-cards">
 
-            <div class="mb-3">
-                <div class="card" >
-                    <div class="svg-container">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" fill="currentColor" class="bi bi-filetype-txt" viewBox="0 0 16 16" style="color: rgb(0, 133, 133);">
-                            <path fill-rule="evenodd" d="M14 4.5V14a2 2 0 0 1-2 2h-2v-1h2a1 1 0 0 0 1-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5L14 4.5ZM1.928 15.849v-3.337h1.136v-.662H0v.662h1.134v3.337h.794Zm4.689-3.999h-.894L4.9 13.289h-.035l-.832-1.439h-.932l1.228 1.983-1.24 2.016h.862l.853-1.415h.035l.85 1.415h.907l-1.253-1.992 1.274-2.007Zm1.93.662v3.337h-.794v-3.337H6.619v-.662h3.064v.662H8.546Z"/>
-                        </svg>
-                    </div>
-                    <div class="card-body">
-                    <p class="card-text">
-                        Por favor, proporciona un archivo de texto que contenga una serie de "promps" (instrucciones o solicitudes) para generar un tipo de respuesta específico. Cada línea del archivo de texto debe representar un "prompt" para la creación del tipo de respuesta.
-                    </p>
-                    <input class="form-control" type="file" accept=".txt"  (change)="onFileSelected($event, 'txt')">
-                    <div class="response-panel">
-                        <pre>{{ response[1] | json }}</pre>
-                    </div>
-                </div>
-                </div>
-            </div>
 
 
-
-            <div class="mb-3">
-                <div class="card" >
-                    <div class="svg-container">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" fill="currentColor" class="bi bi-filetype-xlsx" viewBox="0 0 16 16" style="color: rgb(0, 133, 133);">
-                            <path fill-rule="evenodd" d="M14 4.5V11h-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5L14 4.5ZM7.86 14.841a1.13 1.13 0 0 0 .401.823c.13.108.29.192.479.252.19.061.411.091.665.091.338 0 .624-.053.858-.158.237-.105.416-.252.54-.44a1.17 1.17 0 0 0 .187-.656c0-.224-.045-.41-.135-.56a1.002 1.002 0 0 0-.375-.357 2.028 2.028 0 0 0-.565-.21l-.621-.144a.97.97 0 0 1-.405-.176.37.37 0 0 1-.143-.299c0-.156.061-.284.184-.384.125-.101.296-.152.513-.152.143 0 .266.023.37.068a.624.624 0 0 1 .245.181.56.56 0 0 1 .12.258h.75a1.093 1.093 0 0 0-.199-.566 1.21 1.21 0 0 0-.5-.41 1.813 1.813 0 0 0-.78-.152c-.293 0-.552.05-.777.15-.224.099-.4.24-.527.421-.127.182-.19.395-.19.639 0 .201.04.376.123.524.082.149.199.27.351.367.153.095.332.167.54.213l.618.144c.207.049.36.113.462.193a.387.387 0 0 1 .153.326.512.512 0 0 1-.085.29.558.558 0 0 1-.255.193c-.111.047-.25.07-.413.07-.117 0-.224-.013-.32-.04a.837.837 0 0 1-.249-.115.578.578 0 0 1-.255-.384h-.764Zm-3.726-2.909h.893l-1.274 2.007 1.254 1.992h-.908l-.85-1.415h-.035l-.853 1.415H1.5l1.24-2.016-1.228-1.983h.931l.832 1.438h.036l.823-1.438Zm1.923 3.325h1.697v.674H5.266v-3.999h.791v3.325Zm7.636-3.325h.893l-1.274 2.007 1.254 1.992h-.908l-.85-1.415h-.035l-.853 1.415h-.861l1.24-2.016-1.228-1.983h.931l.832 1.438h.036l.823-1.438Z"/>
-                        </svg>
-                    </div>
-                    <div class="card-body">
-                    <p class="card-text">
-                        Por favor, sube un archivo XLSX que contenga la información correcta y compatible con los archivos anteriores. Este archivo debe contener los datos necesarios para mantener la coherencia con los registros anteriores y garantizar la compatibilidad con el modelo.
-                    </p>   
-                    <input class="form-control" type="file" id="formFile" accept=".xlsx" (change)="onFileSelected($event, 'archivo')"> 
-                    <div class="response-panel">
-                        <pre>{{ response[0] | json }}</pre>
-                    </div>           
-                    </div>
-                </div>
+            <div class="card-group" style="height: 600px; overflow-y: auto; padding: 40px; align-items: center; gap: 10px;">
                 
-            </div>
+                <div class="mb-3">
+                    <div class="card" >
+                        <h5 class="card-title">Prompts</h5>
+                        <div class="svg-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" fill="currentColor" class="bi bi-filetype-txt" viewBox="0 0 16 16" style="color: rgb(0, 133, 133);">
+                                <path fill-rule="evenodd" d="M14 4.5V14a2 2 0 0 1-2 2h-2v-1h2a1 1 0 0 0 1-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5L14 4.5ZM1.928 15.849v-3.337h1.136v-.662H0v.662h1.134v3.337h.794Zm4.689-3.999h-.894L4.9 13.289h-.035l-.832-1.439h-.932l1.228 1.983-1.24 2.016h.862l.853-1.415h.035l.85 1.415h.907l-1.253-1.992 1.274-2.007Zm1.93.662v3.337h-.794v-3.337H6.619v-.662h3.064v.662H8.546Z"/>
+                            </svg>
+                        </div>
+                        <div class="card-body">
+                        <p class="card-text">
+                            Por favor, proporciona un archivo de texto que contenga una serie de "promps" (instrucciones o solicitudes) para generar un tipo de respuesta específico. Cada línea del archivo de texto debe representar un "prompt" para la creación del tipo de respuesta.
+                        </p>
+                        <input class="form-control" type="file" accept=".txt"  (change)="onFileSelected($event, 'txt')">
+                        <div class="response-panel">
+                            <pre>{{ response[1] | json }}</pre>
+                        </div>
+                    </div>
+                    </div>
+                </div>
 
+                <div class="mb-3">
+                    <div class="card" >
+                        <h5 class="card-title">llave de GPT</h5>
+                        <div class="svg-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" fill="currentColor" class="bi bi-key" viewBox="0 0 16 16" style="color: rgb(0, 133, 133);">
+                                <path d="M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8zm4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5z"/>
+                                <path d="M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                            </svg>
+                        </div>
+                        <div class="card-body">
+                        <p class="card-text">
+                            Para activar nuestro modelo GPT y generar datos, es esencial introducir la clave proporcionada en un archivo de texto designado. Esta clave sirve como autorización y desencadena la capacidad del modelo para procesar información, facilitando así la creación y mejora continua de datos.                        </p>
+                        <input class="form-control" type="file" accept=".txt"  (change)="onFileSelected($event, 'key')">
+                        <div class="response-panel">
+                            <pre>{{ response[2] | json }}</pre>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="card" >
+                        <h5 class="card-title">Datos en excel</h5>
+                        <div class="svg-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" fill="currentColor" class="bi bi-filetype-xlsx" viewBox="0 0 16 16" style="color: rgb(0, 133, 133);">
+                                <path fill-rule="evenodd" d="M14 4.5V11h-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5L14 4.5ZM7.86 14.841a1.13 1.13 0 0 0 .401.823c.13.108.29.192.479.252.19.061.411.091.665.091.338 0 .624-.053.858-.158.237-.105.416-.252.54-.44a1.17 1.17 0 0 0 .187-.656c0-.224-.045-.41-.135-.56a1.002 1.002 0 0 0-.375-.357 2.028 2.028 0 0 0-.565-.21l-.621-.144a.97.97 0 0 1-.405-.176.37.37 0 0 1-.143-.299c0-.156.061-.284.184-.384.125-.101.296-.152.513-.152.143 0 .266.023.37.068a.624.624 0 0 1 .245.181.56.56 0 0 1 .12.258h.75a1.093 1.093 0 0 0-.199-.566 1.21 1.21 0 0 0-.5-.41 1.813 1.813 0 0 0-.78-.152c-.293 0-.552.05-.777.15-.224.099-.4.24-.527.421-.127.182-.19.395-.19.639 0 .201.04.376.123.524.082.149.199.27.351.367.153.095.332.167.54.213l.618.144c.207.049.36.113.462.193a.387.387 0 0 1 .153.326.512.512 0 0 1-.085.29.558.558 0 0 1-.255.193c-.111.047-.25.07-.413.07-.117 0-.224-.013-.32-.04a.837.837 0 0 1-.249-.115.578.578 0 0 1-.255-.384h-.764Zm-3.726-2.909h.893l-1.274 2.007 1.254 1.992h-.908l-.85-1.415h-.035l-.853 1.415H1.5l1.24-2.016-1.228-1.983h.931l.832 1.438h.036l.823-1.438Zm1.923 3.325h1.697v.674H5.266v-3.999h.791v3.325Zm7.636-3.325h.893l-1.274 2.007 1.254 1.992h-.908l-.85-1.415h-.035l-.853 1.415h-.861l1.24-2.016-1.228-1.983h.931l.832 1.438h.036l.823-1.438Z"/>
+                            </svg>
+                        </div>
+                        <div class="card-body">
+                        <p class="card-text">
+                            Por favor, sube un archivo XLSX que contenga la información correcta y compatible con los archivos anteriores. Este archivo debe contener los datos necesarios para mantener la coherencia con los registros anteriores y garantizar la compatibilidad con el modelo.
+                        </p>   
+                        <input class="form-control" type="file" id="formFile" accept=".xlsx" (change)="onFileSelected($event, 'archivo')"> 
+                        <div class="response-panel">
+                            <pre>{{ response[0] | json }}</pre>
+                        </div>           
+                        </div>
+                    </div>
+                    
+                </div>
+
+              </div>
         </div>
 
 

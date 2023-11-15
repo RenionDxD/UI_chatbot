@@ -23,7 +23,7 @@ export class FilesSaveComponent {
 
   sendFiles(){
 
-      this.flieservice.uploadFiles(this.archivos['archivo'], this.archivos['txt']).subscribe(
+      this.flieservice.uploadFiles(this.archivos['archivo'],this.archivos['txt'],this.archivos['key']).subscribe(
         response => {
           this.response = response;
           // Realiza el manejo de la respuesta de la API
