@@ -4,7 +4,7 @@
 
 
             <!-- Contenido del chat aquí -->
-            <div class="card mb-3" style="height: 535px;">
+            <div class="card mb-3" style="height: 470px;">
                 <div class="card-body" style="overflow-y: auto;">                    
                     <div style="display: flex;" *ngFor="let msg of mensajes" class="mensaje" [ngClass]="{ 'enviado': msg.tipo === 'enviado', 'recibido': msg.tipo === 'recibido' }">
                         <div style="margin-right: 15px;" *ngIf="msg.tipo === 'recibido'">
