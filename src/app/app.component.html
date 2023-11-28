@@ -1,7 +1,8 @@
 
 <nav class="navbar navbar-dark bg-dark fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" [routerLink]="['/view']" href="#">ChatBot Page</a>
+    <img src="assets/images/DAD-LOGO.jpg" class="card-img-top" alt="..." style="max-width: 5%;">
+    <a class="navbar-brand" [routerLink]="['/view']" href="#">Pagina de administracion del ChatBot</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -23,6 +24,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" [routerLink]="['/generate_model']" href="#">Generar actualizacion de Chat</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/Download_Material']" href="#">Descargar datos recopilados</a>
           </li>
         </ul>
       </div>

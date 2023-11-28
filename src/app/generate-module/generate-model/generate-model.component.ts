@@ -49,7 +49,7 @@ export class GenerateModelComponent {
       // Habilitamos el switch después de 30 segundos
       setTimeout(() => {
         this.isSwitchDisabled = false;
-      }, 10000);
+      }, 3000);
     }
 
     const value = event.target.checked;
